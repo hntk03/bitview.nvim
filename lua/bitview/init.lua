@@ -8,7 +8,6 @@ function M.open()
   if popup_win and vim.api.nvim_win_is_valid(popup_win) then
     vim.api.nvim_win_close(popup_win, true)
     popup_win = nil
-    print("close")
     return
   end
 
