@@ -27,7 +27,7 @@ function M.open()
 
   local index = {}
   local bitsDisp = {}
-  local dispFormat = "%" .. #tostring(#bits) .. "d"
+  local dispFormat = "%" .. #tostring(#bits - 1) .. "d"
   for i, value in ipairs(bits) do
     local idx = #bits - i
 
