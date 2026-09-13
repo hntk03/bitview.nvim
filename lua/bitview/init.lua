@@ -17,7 +17,8 @@ function M.open()
     return
   end
 
-  local num = tonumber(word, 16)
+  local hex = string.sub(word, 3)
+  local num = tonumber(hex, 16)
 
   local bits = {}
   repeat
@@ -42,9 +43,9 @@ function M.open()
 
   local labelFormat = "%-8s"
   vim.api.nvim_buf_set_lines(buf, 0, -1, false, {
-    string.format(labelFormat, "hex") .. word,
     string.format(labelFormat, "bitidx") .. indexStr,
     string.format(labelFormat, "bits") .. bitsStr,
+    string.format(labelFormat, "hex") .. hex,
   })
 
   popup_win = vim.api.nvim_open_win(buf, false, {
